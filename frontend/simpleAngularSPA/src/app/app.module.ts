@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { MatButtonModule } from "@angular/material/button"
 import { MatCardModule } from "@angular/material/card";
+import { MatToolbarModule } from "@angular/material/toolbar"
 import { NavComponent } from './components/templates/nav/nav.component';
 import { HeaderComponent } from './components/templates/header/header.component';
 import { FooterComponent } from './components/templates/footer/footer.component';
@@ -27,7 +28,8 @@ import { UserAddressComponent } from './components/user/user-address/user-addres
     BrowserAnimationsModule,
     AppRoutingModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
