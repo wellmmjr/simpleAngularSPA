@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
 
 /**
  * @license
@@ -8,15 +8,16 @@ import { ContentContainerComponentHarness, HarnessPredicate, ComponentHarness } 
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
+const EXPANSION_PANEL_CONTENT_SELECTOR = '.mat-expansion-panel-content';
 /** Harness for interacting with a standard mat-expansion-panel in tests. */
-class MatExpansionPanelHarness extends ContentContainerComponentHarness {
+class MatExpansionPanelHarness extends ComponentHarness {
     constructor() {
         super(...arguments);
-        this._header = this.locatorFor(".mat-expansion-panel-header" /* HEADER */);
-        this._title = this.locatorForOptional(".mat-expansion-panel-header-title" /* TITLE */);
-        this._description = this.locatorForOptional(".mat-expansion-panel-header-description" /* DESCRIPTION */);
+        this._header = this.locatorFor('.mat-expansion-panel-header');
+        this._title = this.locatorForOptional('.mat-expansion-panel-header-title');
+        this._description = this.locatorForOptional('.mat-expansion-panel-header-description');
         this._expansionIndicator = this.locatorForOptional('.mat-expansion-indicator');
-        this._content = this.locatorFor(".mat-expansion-panel-content" /* CONTENT */);
+        this._content = this.locatorFor(EXPANSION_PANEL_CONTENT_SELECTOR);
     }
     /**
      * Gets a `HarnessPredicate` that can be used to search for an expansion-panel
@@ -102,13 +103,10 @@ class MatExpansionPanelHarness extends ContentContainerComponentHarness {
     /**
      * Gets a `HarnessLoader` that can be used to load harnesses for
      * components within the panel's content area.
-     * @deprecated Use either `getChildLoader(MatExpansionPanelSection.CONTENT)`, `getHarness` or
-     *    `getAllHarnesses` instead.
-     * @breaking-change 12.0.0
      */
     getHarnessLoaderForContent() {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.getChildLoader(".mat-expansion-panel-content" /* CONTENT */);
+            return this.locatorFactory.harnessLoaderFor(EXPANSION_PANEL_CONTENT_SELECTOR);
         });
     }
     /** Focuses the panel. */

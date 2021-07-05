@@ -5,10 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
 import { ButtonHarnessFilters } from './button-harness-filters';
 /** Harness for interacting with a standard mat-button in tests. */
-export declare class MatButtonHarness extends ContentContainerComponentHarness {
+export declare class MatButtonHarness extends ComponentHarness {
     /** The selector for the host element of a `MatButton` instance. */
     static hostSelector: string;
     /**
@@ -18,14 +18,6 @@ export declare class MatButtonHarness extends ContentContainerComponentHarness {
      * @return a `HarnessPredicate` configured with the given options.
      */
     static with(options?: ButtonHarnessFilters): HarnessPredicate<MatButtonHarness>;
-    /**
-     * Clicks the button at the given position relative to its top-left.
-     * @param relativeX The relative x position of the click.
-     * @param relativeY The relative y position of the click.
-     */
-    click(relativeX: number, relativeY: number): Promise<void>;
-    /** Clicks the button at its center. */
-    click(location: 'center'): Promise<void>;
     /** Clicks the button. */
     click(): Promise<void>;
     /** Whether the button is disabled. */

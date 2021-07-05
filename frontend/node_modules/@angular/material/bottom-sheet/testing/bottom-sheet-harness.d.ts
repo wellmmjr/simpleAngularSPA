@@ -5,10 +5,13 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
 import { BottomSheetHarnessFilters } from './bottom-sheet-harness-filters';
-/** Harness for interacting with a standard MatBottomSheet in tests. */
-export declare class MatBottomSheetHarness extends ContentContainerComponentHarness<string> {
+/**
+ * Harness for interacting with a standard MatBottomSheet in tests.
+ * @dynamic
+ */
+export declare class MatBottomSheetHarness extends ComponentHarness {
     static hostSelector: string;
     /**
      * Gets a `HarnessPredicate` that can be used to search for a bottom sheet with

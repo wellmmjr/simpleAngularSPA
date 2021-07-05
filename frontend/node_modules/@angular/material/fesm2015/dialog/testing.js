@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate, TestKey } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate, TestKey } from '@angular/cdk/testing';
 
 /**
  * @license
@@ -9,7 +9,7 @@ import { ContentContainerComponentHarness, HarnessPredicate, TestKey } from '@an
  * found in the LICENSE file at https://angular.io/license
  */
 /** Harness for interacting with a standard `MatDialog` in tests. */
-class MatDialogHarness extends ContentContainerComponentHarness {
+class MatDialogHarness extends ComponentHarness {
     /**
      * Gets a `HarnessPredicate` that can be used to search for a `MatDialogHarness` that meets
      * certain criteria.
