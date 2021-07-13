@@ -1,3 +1,5 @@
+import { NavService } from './nav.service';
+import { MenuItem } from './navItem.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  menuItens: MenuItem[]
+
+  constructor(private navService: NavService) { }
 
   ngOnInit(): void {
+    this.navService.listWorkspace().subscribe(menuItens => {
+      this.menuItens = menuItens
+    })
+    console.log(this.menuItens)
   }
 
 }

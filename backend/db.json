@@ -10,5 +10,47 @@
     }],
     "operator":[{
         
-    }]
+    }],
+    "menuItens":[
+        {
+            "id":0,
+            "name":"home",
+            "label":"Home",
+            "positionOrder": 0,
+            "path":"/",
+            "icon":"home"
+        },
+        {
+            "id": 1,
+            "name":"posts",
+            "label":"Postagens",
+            "positionOrder": 1,
+            "path":"/post",
+            "icon":"auto_awesome_motion"
+        },
+        {
+            "id": 2,
+            "name":"services",
+            "label":"Serviços",
+            "positionOrder": 2,
+            "path":"/services/list",
+            "icon":"receipt_long"
+        },
+        {
+            "id": 3,
+            "name":"news",
+            "label":"Novidades",
+            "positionOrder": 3,
+            "path":"/news",
+            "icon":"auto_awesome"
+        },
+        {
+            "id":4,
+            "name":"userAccount",
+            "label":"Minha Conta",
+            "positionOrder": 4,
+            "path":"/myaccount",
+            "icon":"perm_identity"
+        }
+    ]
 }

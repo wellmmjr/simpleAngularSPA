@@ -1,4 +1,5 @@
 .sidenav{
+    position: fixed;
     background-color: #BA151B;
     width: 9%;
 }
@@ -14,4 +15,29 @@
 .content{
     padding: 16px;
     background-color: #FFF;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    background-color: #BA151B;    
+    justify-content: center;
+    align-items: center;
+}
+
+.nav a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav .logo{
+    max-height: 5rem
+}
+
+.nav .title-group{
+    padding-left: 25px;
+}
+.nav .title-group i{
+    padding-right: 5px;
 }

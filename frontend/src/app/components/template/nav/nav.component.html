@@ -1,11 +1,12 @@
-<mat-sidenav-container class="container">
-    <mat-sidenav class="sidenav" mode="side" opened
-        fixedInViewport="true"
-        fixedTopGap="64"
-    >
-
-
-    </mat-sidenav>
-
-
-</mat-sidenav-container>
+<mat-toolbar-row class="mat-toolbar nav ">
+  <div *ngFor="let item of menuItens">
+    <span>
+      <a mat-button>
+        <i class="material-icons">
+          {{ item.icon}}
+        </i>
+        {{ item.label }}
+      </a>
+    </span>
+  </div>
+</mat-toolbar-row>
