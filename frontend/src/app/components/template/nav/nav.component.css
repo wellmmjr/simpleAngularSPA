@@ -1,23 +1,5 @@
-.sidenav{
-    position: fixed;
-    background-color: #BA151B;
-    width: 9%;
-}
-
-.sidenav a{
-    color: #fff;
-}
-
-.sidenav i{
-    padding-right: 10px;
-}
-
-.content{
-    padding: 16px;
-    background-color: #FFF;
-}
-
 .nav{
+    /* position: fixed; */
     display: flex;
     align-items: center;
     background-color: #BA151B;    
@@ -25,10 +7,35 @@
     align-items: center;
 }
 
-.nav a{
+.nav .mat-button-toggle-group{
+    border: none;  
+}
+
+.nav .mat-button-toggle{
+    background-color: transparent;
+    margin: 0.25rem;
+    border-radius: 2em;
+    justify-content: baseline;
+    display: flex;
+}
+
+.nav .mat-button-toggle-checked{
+    background-color: rgb(56, 54, 54);    
+}
+
+.nav .mat-button-toggle a{
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: #241818;
+}
+
+.nav .mat-button-toggle-checked a{
+   color: #FFF;
+}
+
+.nav i{
+    margin-right: 0.3rem;
 }
 
 .nav .logo{
@@ -38,6 +45,8 @@
 .nav .title-group{
     padding-left: 25px;
 }
+
 .nav .title-group i{
     padding-right: 5px;
 }
+

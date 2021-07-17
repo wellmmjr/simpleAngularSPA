@@ -13,6 +13,12 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatButtonModule } from '@angular/material/button'
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { HomeComponent } from './view/home/home.component';
+import { PostsComponent } from './view/posts/posts.component';
+import { ServicesComponent } from './view/services/services.component';
+import { NewsComponent } from './view/news/news.component';
+import { MyAccountComponent } from './view/my-account/my-account.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +26,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     FooterComponent,
     NavComponent,
     HeaderComponent,
-    ServicesSecctionComponent
+    ServicesSecctionComponent,
+    HomeComponent,
+    PostsComponent,
+    ServicesComponent,
+    NewsComponent,
+    MyAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +40,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
+    MatButtonToggleModule,
     HttpClientModule,
     NgbModule
   ],

@@ -1,12 +1,25 @@
 <mat-toolbar-row class="mat-toolbar nav ">
-  <div *ngFor="let item of menuItens">
+  <mat-button-toggle-group name="menuItens">
+    <div *ngFor="let item of menuItens">
+      <span>
+        <mat-button-toggle value="{{ item.name }}">
+          
+          <a routerLink="{{item.path}}">
+            <i class="material-icons">
+              {{ item.icon}}
+            </i>
+
+            {{ item.label }}
+
+          </a>
+        </mat-button-toggle>
+      </span>
+    </div>
+  </mat-button-toggle-group>
+
+  <div>
     <span>
-      <a mat-button>
-        <i class="material-icons">
-          {{ item.icon}}
-        </i>
-        {{ item.label }}
-      </a>
+      <router-outlet></router-outlet>
     </span>
   </div>
 </mat-toolbar-row>
