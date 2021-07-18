@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HeaderComponent } from './components/template/header/header.component';
-import { ServicesSecctionComponent } from './components/services-secction/services-secction.component';
+import { ServicesSecctionComponent } from './components/providedServices/services-secction/services-secction.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatButtonModule } from '@angular/material/button'
@@ -18,7 +18,10 @@ import { HomeComponent } from './view/home/home.component';
 import { PostsComponent } from './view/posts/posts.component';
 import { ServicesComponent } from './view/services/services.component';
 import { NewsComponent } from './view/news/news.component';
-import { MyAccountComponent } from './view/my-account/my-account.component'
+import { MyAccountComponent } from './view/my-account/my-account.component';
+import { HomeHighlightsComponent } from './components/home/home-highlights/home-highlights.component';
+import { HomeColumnistComponent } from './components/home/home-columnist/home-columnist.component';
+import { ScheduleComponent } from './view/schedule/schedule.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { MyAccountComponent } from './view/my-account/my-account.component'
     PostsComponent,
     ServicesComponent,
     NewsComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    HomeHighlightsComponent,
+    HomeColumnistComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,14 @@
             "icon":"home"
         },
         {
+            "id":0,
+            "name":"schedule",
+            "label":"Agenda",
+            "positionOrder": 0,
+            "path":"/schedule",
+            "icon":"date_range"
+        },
+        {
             "id": 1,
             "name":"posts",
             "label":"Postagens",

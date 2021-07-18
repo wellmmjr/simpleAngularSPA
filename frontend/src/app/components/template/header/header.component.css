@@ -28,7 +28,8 @@
   border-style: solid;
   background: transparent;
   border-radius: 25px;
-  color: #2D2122
+  color: #2D2122;
+  box-shadow: none;
 }
 
 .header .button {
