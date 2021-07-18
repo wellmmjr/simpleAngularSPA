@@ -1,0 +1,37 @@
+.header{
+    display: flex;
+    background-color: #BA151B;
+}
+
+.header a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header .logo{
+    max-width: 130px;
+}
+
+.header .title-group{
+    padding-left: 25px;
+}
+
+.header .title-group i{
+    padding-right: 5px;
+}
+
+.header button {
+  text-transform: uppercase;
+  float: right;
+  border-color: #2D2122;
+  border-style: solid;
+  background: transparent;
+  border-radius: 25px;
+  color: #2D2122;
+  box-shadow: none;
+}
+
+.header .button {
+    width: 100%;
+}

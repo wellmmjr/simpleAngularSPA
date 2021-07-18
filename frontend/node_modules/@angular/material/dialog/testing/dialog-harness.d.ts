@@ -5,11 +5,11 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
 import { DialogRole } from '@angular/material/dialog';
 import { DialogHarnessFilters } from './dialog-harness-filters';
 /** Harness for interacting with a standard `MatDialog` in tests. */
-export declare class MatDialogHarness extends ContentContainerComponentHarness<string> {
+export declare class MatDialogHarness extends ComponentHarness {
     /** The selector for the host element of a `MatDialog` instance. */
     static hostSelector: string;
     /**

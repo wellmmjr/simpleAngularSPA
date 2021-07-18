@@ -5,17 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-import { ContentContainerComponentHarness, HarnessLoader, HarnessPredicate } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessLoader, HarnessPredicate } from '@angular/cdk/testing';
 import { ExpansionPanelHarnessFilters } from './expansion-harness-filters';
-/** Selectors for the various `mat-expansion-panel` sections that may contain user content. */
-export declare const enum MatExpansionPanelSection {
-    HEADER = ".mat-expansion-panel-header",
-    TITLE = ".mat-expansion-panel-header-title",
-    DESCRIPTION = ".mat-expansion-panel-header-description",
-    CONTENT = ".mat-expansion-panel-content"
-}
 /** Harness for interacting with a standard mat-expansion-panel in tests. */
-export declare class MatExpansionPanelHarness extends ContentContainerComponentHarness<MatExpansionPanelSection> {
+export declare class MatExpansionPanelHarness extends ComponentHarness {
     static hostSelector: string;
     private _header;
     private _title;
@@ -61,9 +54,6 @@ export declare class MatExpansionPanelHarness extends ContentContainerComponentH
     /**
      * Gets a `HarnessLoader` that can be used to load harnesses for
      * components within the panel's content area.
-     * @deprecated Use either `getChildLoader(MatExpansionPanelSection.CONTENT)`, `getHarness` or
-     *    `getAllHarnesses` instead.
-     * @breaking-change 12.0.0
      */
     getHarnessLoaderForContent(): Promise<HarnessLoader>;
     /** Focuses the panel. */

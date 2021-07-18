@@ -1,5 +1,5 @@
 import { __awaiter } from 'tslib';
-import { ContentContainerComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
+import { ComponentHarness, HarnessPredicate } from '@angular/cdk/testing';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 
 /**
@@ -10,7 +10,7 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion';
  * found in the LICENSE file at https://angular.io/license
  */
 /** Harness for interacting with a standard mat-button in tests. */
-class MatButtonHarness extends ContentContainerComponentHarness {
+class MatButtonHarness extends ComponentHarness {
     /**
      * Gets a `HarnessPredicate` that can be used to search for a `MatButtonHarness` that meets
      * certain criteria.
@@ -21,9 +21,10 @@ class MatButtonHarness extends ContentContainerComponentHarness {
         return new HarnessPredicate(MatButtonHarness, options)
             .addOption('text', options.text, (harness, text) => HarnessPredicate.stringMatches(harness.getText(), text));
     }
-    click(...args) {
+    /** Clicks the button. */
+    click() {
         return __awaiter(this, void 0, void 0, function* () {
-            return (yield this.host()).click(...args);
+            return (yield this.host()).click();
         });
     }
     /** Whether the button is disabled. */
