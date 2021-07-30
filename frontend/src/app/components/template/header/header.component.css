@@ -35,3 +35,11 @@
 .header .button {
     width: 100%;
 }
+
+.header p{
+    margin: 0.75em;
+    justify-content: center;
+    color: #2D2122;
+    font-family: fantasy;
+    font-size: 2em;
+}

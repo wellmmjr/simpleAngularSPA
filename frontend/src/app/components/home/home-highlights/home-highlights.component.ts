@@ -7,9 +7,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeHighlightsComponent implements OnInit {
 
+  scrollItems: any[];
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.scrollItems = [
+      'Herb Costales',
+      'Gloria Cherie',
+      'Paraskeva Goran',
+      'Paskal',
+      'Nadia',
+      'Lyudmila',
+      'Mihaela',
+      'Snezhana',
+      'Katya',
+      'Ekaterina',
+      'Milena',
+      'Nedyalka',
+      'Nadejda',
+      'Hristina',
+      'Denica',
+      'Gabriela',
+      'Kuzman',
+      'Roza',
+      'Genko',
+      'Lyubomir',
+      'Tereza',
+      'Eva',
+      'Zara',
+      'Mila',
+      'Veronika',
+      'Blaga',
+      'Ilarion',
+      'Sofia',
+      'Ignat'
+
+    ];
+
   }
 
 }
