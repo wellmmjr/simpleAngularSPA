@@ -1,3 +1,7 @@
+import { MyAccountComponent } from './view/my-account/my-account.component';
+import { NewsComponent } from './view/news/news.component';
+import { ServicesComponent } from './view/services/services.component';
+import { PostsComponent } from './view/posts/posts.component';
 import { ScheduleComponent } from './view/schedule/schedule.component';
 import { HomeComponent } from './view/home/home.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +15,22 @@ const routes: Routes = [
   {
     path: "schedule",
     component: ScheduleComponent
+  },
+  {
+    path: "posts",
+    component: PostsComponent
+  },
+  {
+    path: "services/list",
+    component: ServicesComponent
+  },
+  {
+    path: "news",
+    component: NewsComponent
+  },
+  {
+    path: "myaccount",
+    component: MyAccountComponent
   }
 ];
 

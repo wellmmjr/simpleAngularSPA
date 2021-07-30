@@ -22,6 +22,8 @@ import { MyAccountComponent } from './view/my-account/my-account.component';
 import { HomeHighlightsComponent } from './components/home/home-highlights/home-highlights.component';
 import { HomeColumnistComponent } from './components/home/home-columnist/home-columnist.component';
 import { ScheduleComponent } from './view/schedule/schedule.component'
+import { MatCardModule } from '@angular/material/card';
+import { HomeScrollViewComponent } from './components/sourceComponents/home-scroll-view/home-scroll-view.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { ScheduleComponent } from './view/schedule/schedule.component'
     MyAccountComponent,
     HomeHighlightsComponent,
     HomeColumnistComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    HomeScrollViewComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { ScheduleComponent } from './view/schedule/schedule.component'
     MatSidenavModule,
     MatButtonModule,
     MatButtonToggleModule,
+    MatCardModule,
     HttpClientModule,
     NgbModule
   ],
