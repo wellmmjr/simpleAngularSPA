@@ -1,9 +1,10 @@
 .footer {
     /* position: fixed; */
     bottom: 0;
-
-    display: flex;
+    width: 100%;
+    /* display: flex; */
     justify-content: center;
+    white-space: normal;
 }
 
 .footer > span {

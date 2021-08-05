@@ -55,3 +55,9 @@
     height: 100%;
 }
 
+.nav .scrolling {
+    overflow-x: auto;
+    user-select: none;
+    -webkit-user-select: none;
+}
+

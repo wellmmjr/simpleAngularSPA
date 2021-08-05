@@ -17,7 +17,6 @@ export class NavComponent implements OnInit {
     this.navService.listWorkspace().subscribe(menuItens => {
       this.menuItens = menuItens
     })
-    console.log(this.menuItens)
   }
 
 }

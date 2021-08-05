@@ -17,7 +17,7 @@ const routes: Routes = [
     component: ScheduleComponent
   },
   {
-    path: "posts",
+    path: "post",
     component: PostsComponent
   },
   {

@@ -1,3 +1,4 @@
+import { HomeScrollViewComponent } from './components/sourceComponents/home-components/home-scroll-view/home-scroll-view.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -23,7 +24,7 @@ import { HomeHighlightsComponent } from './components/home/home-highlights/home-
 import { HomeColumnistComponent } from './components/home/home-columnist/home-columnist.component';
 import { ScheduleComponent } from './view/schedule/schedule.component'
 import { MatCardModule } from '@angular/material/card';
-import { HomeScrollViewComponent } from './components/sourceComponents/home-scroll-view/home-scroll-view.component'
+import { HomeCarouselComponent } from './components/sourceComponents/home-components/home-carousel/home-carousel.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { HomeScrollViewComponent } from './components/sourceComponents/home-scro
     HomeHighlightsComponent,
     HomeColumnistComponent,
     ScheduleComponent,
-    HomeScrollViewComponent
+    HomeScrollViewComponent,
+    HomeCarouselComponent
   ],
   imports: [
     BrowserModule,
