@@ -1,0 +1,7 @@
+.carouselBox {
+    width: 60%;
+    height: 40%;
+    justify-content: center;
+    position: relative;
+    align-self: center;
+}

@@ -56,8 +56,10 @@
 }
 
 .nav .scrolling {
-    overflow-x: auto;
-    user-select: none;
-    -webkit-user-select: none;
+    overflow-x: auto; 
+}
+
+.nav .scrolling::-webkit-scrollbar{
+    width: 0;
 }
 
