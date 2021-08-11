@@ -9,10 +9,11 @@
 .fullContentBox .paragraph{
     display: flex;
     width: 100%;
-    max-height: 35rem;
     margin-top: 5.5rem;
     margin-bottom: 2.5rem;
     justify-content: center;
+    text-align: justify;
+
 }
 
 .fullContentBox .carouselBox {
@@ -28,7 +29,8 @@
 .fullContentBox .carouselBox ngb-carousel{
     /* display: flex; */
     width: 75%;
-    height: 25rem;
+    height: auto;
+    max-height: 25rem;
     align-self: center;
     justify-self: center;
 }
@@ -37,4 +39,9 @@
     object-fit: cover;
     width: 100%;
     max-height: 25rem;
+}
+
+p::selection{
+    background: purple;
+    color: black;
 }
