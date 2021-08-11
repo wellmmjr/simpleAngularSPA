@@ -25,6 +25,7 @@ import { HomeColumnistComponent } from './components/home/home-columnist/home-co
 import { ScheduleComponent } from './view/schedule/schedule.component'
 import { MatCardModule } from '@angular/material/card';
 import { HomeCarouselComponent } from './components/sourceComponents/home-components/home-carousel/home-carousel.component';
+import { PickPicTo64ButtonComponent } from './components/sourceComponents/noParentOnes/pick-pic-to64-button/pick-pic-to64-button.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { HomeCarouselComponent } from './components/sourceComponents/home-compon
     HomeColumnistComponent,
     ScheduleComponent,
     HomeScrollViewComponent,
-    HomeCarouselComponent
+    HomeCarouselComponent,
+    PickPicTo64ButtonComponent
   ],
   imports: [
     BrowserModule,
