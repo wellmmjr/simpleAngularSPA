@@ -2,9 +2,10 @@
     /* position: fixed; */
     bottom: 0;
     width: 100%;
-    /* display: flex; */
+    display: inline-table;
     justify-content: center;
     white-space: normal;
+    text-align: center;
 }
 
 .footer > span {
