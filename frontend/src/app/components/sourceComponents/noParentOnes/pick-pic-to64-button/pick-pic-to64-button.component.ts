@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swall from 'sweetalert2'
 
 @Component({
   selector: 'app-pick-pic-to64-button',
@@ -24,37 +25,28 @@ export class PickPicTo64ButtonComponent {
 
   addPictures() {
     this.finalJson = {
-      "sellersPermitFile": this.ExteriorPicString,
+      "sellersPermitFile": this.sellersPermitString,
       "DriversLicenseFile": this.DriversLicenseString,
       "InteriorPicFile": this.InteriorPicString,
       "ExteriorPicFile": this.ExteriorPicString
     }
+    console.log("theres \n"+this.ExteriorPicString.toString)
+    console.log("DriversLicenseFile "+ this.DriversLicenseString)
+    console.log("InteriorPicFile "+ this.InteriorPicString)
+    console.log("ExteriorPicFile "+ this.ExteriorPicString)
   }
   public picked(event, field) {
     this.currentId = field;
     let fileList: FileList = event.target.files;
+    debugger;
     if (fileList.length > 0) {
       const file: File = fileList[0];
-      if (field == 1) {
-        this.sellersPermitFile = file;
-        this.handleInputChange(file); //turn into base64
-      }
-      else if (field == 2) {
-        this.DriversLicenseFile = file;
-        this.handleInputChange(file); //turn into base64
-      }
-      else if (field == 3) {
-        this.InteriorPicFile = file;
-        this.handleInputChange(file); //turn into base64
-      }
-      else if (field == 4) {
-        this.ExteriorPicFile = file;
-        this.handleInputChange(file); //turn into base64
-
-      }
+        
+      this.sellersPermitFile = file;
+      this.handleInputChange(file); //turn into base64
     }
     else {
-      alert("No file selected");
+      this.prettyAlert('Envio da Imagem', 'error', "Nenhuma imagem selecionada.")
     }
   }
 
@@ -101,6 +93,16 @@ export class PickPicTo64ButtonComponent {
     console.log('4', this.ExteriorPicString);
   }
 
+
+  prettyAlert(titleP: string, iconP, textP: string){
+
+    Swall.fire({
+      title: titleP,
+      text: textP,
+      icon: iconP
+    });
+
+  }
 
 
 }
