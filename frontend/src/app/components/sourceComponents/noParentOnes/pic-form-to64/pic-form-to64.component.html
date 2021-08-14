@@ -1,12 +1,22 @@
 <form>
     <mat-form-field>
         <mat-label>Título</mat-label>
-        <input matInput placeholder="O título do seu conteúdo aqui...">
+        <input 
+            matInput 
+            name="title"
+            [(ngModel)] = "contentMidia.title"
+            placeholder="O título do seu conteúdo aqui..."
+        >
     </mat-form-field>
 
     <mat-form-field>
         <mat-label>Conteúdo</mat-label>
-        <textarea matInput placeholder="Seu texto ou conteúdo, a vontade aqui"></textarea>
+        <textarea 
+            matInput 
+            name="text"
+            [(ngModel)] = "contentMidia.text"
+            placeholder="Seu texto ou conteúdo, a vontade aqui"
+        ></textarea>
     </mat-form-field>
 
     <app-pick-pic-to64-button></app-pick-pic-to64-button>

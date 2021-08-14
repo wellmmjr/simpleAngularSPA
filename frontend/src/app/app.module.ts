@@ -1,6 +1,6 @@
 import { HomeScrollViewComponent } from './components/sourceComponents/home-components/home-scroll-view/home-scroll-view.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatButtonModule } from '@angular/material/button'
 import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -61,10 +62,16 @@ import { FormsModule } from '@angular/forms';
     MatButtonToggleModule,
     MatCardModule,
     MatFormFieldModule,
+    MatInputModule,
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pic-form-to64',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PicFormTo64Component implements OnInit {
 
+  contentMidia =  {
+    title: '',
+    text: ''
+  }
+  // title = new FormControl('', [Validators.required])
+  // textDescription = new FormControl('', [Validators.required])
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

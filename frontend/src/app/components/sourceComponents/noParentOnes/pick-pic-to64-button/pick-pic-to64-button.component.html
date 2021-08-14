@@ -1,7 +1,6 @@
 <form>
   <mat-form-field>
-    <input (change)="picked($event)" type="file">
-
-    <button class="butoncus_sig" id="dnext" (click)="addPictures()">Submit</button>
+    <input (change)="picked($event)" name="pickpic" type="file">
   </mat-form-field>
 </form>
+<button class="butoncus_sig" id="dnext" (click)="addPictures()">Submit</button>

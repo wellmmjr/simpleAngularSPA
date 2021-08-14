@@ -8,16 +8,9 @@ import Swall from 'sweetalert2'
 })
 export class PickPicTo64ButtonComponent {
 
-  imageSrc;
   sellersPermitFile: any;
-  DriversLicenseFile: any;
-  InteriorPicFile: any;
-  ExteriorPicFile: any;
   //base64s
   sellersPermitString: string;
-  DriversLicenseString: string;
-  InteriorPicString: string;
-  ExteriorPicString: string;
   //json
   finalJson = {};
 
@@ -26,14 +19,7 @@ export class PickPicTo64ButtonComponent {
   addPictures() {
     this.finalJson = {
       "sellersPermitFile": this.sellersPermitString,
-      "DriversLicenseFile": this.DriversLicenseString,
-      "InteriorPicFile": this.InteriorPicString,
-      "ExteriorPicFile": this.ExteriorPicString
     }
-    console.log("theres \n" + this.ExteriorPicString.toString)
-    console.log("DriversLicenseFile " + this.DriversLicenseString)
-    console.log("InteriorPicFile " + this.InteriorPicString)
-    console.log("ExteriorPicFile " + this.ExteriorPicString)
   }
   public picked(event) {
     this.currentId = 1;
