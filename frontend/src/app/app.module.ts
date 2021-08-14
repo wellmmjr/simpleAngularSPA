@@ -12,6 +12,7 @@ import { ServicesSecctionComponent } from './components/providedServices/service
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatButtonModule } from '@angular/material/button'
+import { MatFormFieldModule } from '@angular/material/form-field'
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -26,6 +27,8 @@ import { ScheduleComponent } from './view/schedule/schedule.component'
 import { MatCardModule } from '@angular/material/card';
 import { HomeCarouselComponent } from './components/sourceComponents/home-components/home-carousel/home-carousel.component';
 import { PickPicTo64ButtonComponent } from './components/sourceComponents/noParentOnes/pick-pic-to64-button/pick-pic-to64-button.component';
+import { PicFormTo64Component } from './components/sourceComponents/noParentOnes/pic-form-to64/pic-form-to64.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,17 +47,20 @@ import { PickPicTo64ButtonComponent } from './components/sourceComponents/noPare
     ScheduleComponent,
     HomeScrollViewComponent,
     HomeCarouselComponent,
-    PickPicTo64ButtonComponent
+    PickPicTo64ButtonComponent,
+    PicFormTo64Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
+    MatFormFieldModule,
     HttpClientModule,
     NgbModule
   ],

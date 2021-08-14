@@ -30,33 +30,20 @@ export class PickPicTo64ButtonComponent {
       "InteriorPicFile": this.InteriorPicString,
       "ExteriorPicFile": this.ExteriorPicString
     }
-    console.log("theres \n"+this.ExteriorPicString.toString)
-    console.log("DriversLicenseFile "+ this.DriversLicenseString)
-    console.log("InteriorPicFile "+ this.InteriorPicString)
-    console.log("ExteriorPicFile "+ this.ExteriorPicString)
+    console.log("theres \n" + this.ExteriorPicString.toString)
+    console.log("DriversLicenseFile " + this.DriversLicenseString)
+    console.log("InteriorPicFile " + this.InteriorPicString)
+    console.log("ExteriorPicFile " + this.ExteriorPicString)
   }
-  public picked(event, field) {
-    this.currentId = field;
+  public picked(event) {
+    this.currentId = 1;
     let fileList: FileList = event.target.files;
     debugger;
     if (fileList.length > 0) {
       const file: File = fileList[0];
-        
+
       this.sellersPermitFile = file;
       this.handleInputChange(file); //turn into base64
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
     else {
@@ -79,34 +66,8 @@ export class PickPicTo64ButtonComponent {
   _handleReaderLoaded(e) {
     let reader = e.target;
     var base64result = reader.result.substr(reader.result.indexOf(',') + 1);
-    //this.imageSrc = base64result;
-    let id = this.currentId;
-    switch (id) {
-      case 1:
-        this.sellersPermitString = base64result;
-        break;
-      case 2:
-        this.DriversLicenseString = base64result;
-        break;
-      case 3:
-        this.InteriorPicString = base64result;
-        break;
-      case 4:
-        this.ExteriorPicString = base64result;
-        break
-    }
-
-    this.log();
+    this.sellersPermitString = base64result;
   }
-
-  log() { 
-    // for debug
-    console.log('1', this.sellersPermitString);
-    console.log('2', this.DriversLicenseString);
-    console.log('3', this.InteriorPicString);
-    console.log('4', this.ExteriorPicString);
-  }
-
 
   prettyAlert(titleP: string, iconP, textP: string){
 
@@ -115,8 +76,6 @@ export class PickPicTo64ButtonComponent {
       text: textP,
       icon: iconP
     });
-
+  
   }
-
-
 }

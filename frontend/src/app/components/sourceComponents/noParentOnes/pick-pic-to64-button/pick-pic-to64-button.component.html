@@ -1,4 +1,7 @@
-<p>pick-pic-to64-button works!</p>
-<input (change)="picked($event,1)" type="file">
+<form>
+  <mat-form-field>
+    <input (change)="picked($event)" type="file">
 
-<button class="butoncus_sig" id="dnext" (click)="addPictures()">Submit</button>
+    <button class="butoncus_sig" id="dnext" (click)="addPictures()">Submit</button>
+  </mat-form-field>
+</form>
