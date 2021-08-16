@@ -1,6 +1,9 @@
-<form>
-  <mat-form-field>
-    <input (change)="picked($event)" name="pickpic" type="file">
-  </mat-form-field>
-</form>
-<button class="butoncus_sig" id="dnext" (click)="addPictures()">Submit</button>
+<div  class="input-group">
+  <div class="input-group-prepend">
+    <button class="input-group-text" style="font-size: 1em;"  id="dnext" (click)="addPictures()">Enviar</button>
+  </div>
+  <div class="custom-file">
+    <input class="custom-file-input" (change)="picked($event)" name="pickpic" type="file">Selecionar arquivo
+    <label class="custom-file-label">Selecionar arquivo</label>
+  </div>
+</div>
