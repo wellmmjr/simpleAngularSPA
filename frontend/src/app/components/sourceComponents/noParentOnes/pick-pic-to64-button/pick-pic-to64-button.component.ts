@@ -1,5 +1,5 @@
 import { MatFormFieldControl } from '@angular/material/form-field';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Swall from 'sweetalert2'
 
 @Component({
@@ -7,15 +7,23 @@ import Swall from 'sweetalert2'
   templateUrl: './pick-pic-to64-button.component.html',
   styleUrls: ['./pick-pic-to64-button.component.css']
 })
-export class PickPicTo64ButtonComponent {
+export class PickPicTo64ButtonComponent implements OnInit {
 
   sellersPermitFile: any;
   //base64s
   sellersPermitString: string;
   //json
+
+  fileName: string;
+
   finalJson = {};
 
-  currentId: number = 0;
+  constructor(){}
+
+  ngOnInit(){
+    this.fileName = "Selecione o arquivo"
+  }
+
 
   addPictures() {
     this.finalJson = {
@@ -23,9 +31,8 @@ export class PickPicTo64ButtonComponent {
     }
   }
   public picked(event) {
-    this.currentId = 1;
     let fileList: FileList = event.target.files;
-    debugger;
+    // debugger;
     if (fileList.length > 0) {
       const file: File = fileList[0];
 
@@ -43,8 +50,10 @@ export class PickPicTo64ButtonComponent {
     var file = files;
     var pattern = /image-*/;
     var reader = new FileReader();
+    this.fileName = file.name
+    console.log("format: "+file.type+"\n name: "+file.name)
     if (!file.type.match(pattern)) {
-      alert('invalid format');
+      this.prettyAlert('Formato Inválido', 'error', "Selecione um arquivo de imagem válido.");
       return;
     }
     reader.onloadend = this._handleReaderLoaded.bind(this);

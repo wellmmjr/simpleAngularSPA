@@ -1,9 +1,25 @@
 <div  class="input-group">
   <div class="input-group-prepend">
-    <button class="input-group-text" style="font-size: 1em;"  id="dnext" (click)="addPictures()">Enviar</button>
+    <span 
+      class="input-group-text" 
+      style="font-size: 1em;"  
+      id="inputGroupFileAddon01" 
+      (click)="addPictures()"
+    >Carregar</span>
   </div>
-  <div class="custom-file">
-    <input class="custom-file-input" (change)="picked($event)" name="pickpic" type="file">Selecionar arquivo
-    <label class="custom-file-label">Selecionar arquivo</label>
+  <div class="form-group custom-file">
+    <input 
+      class="custom-file-input" 
+      aria-describedby="inputGroupFileAddon01" 
+      (change)="picked($event)" 
+      id="pickPic" 
+      name="pickPic" 
+      type="file"
+    >
+    <mat-label 
+      class="custom-file-label" 
+      id="pickPic"
+      for="inputGroupFileAddon01"
+    >{{fileName}}</mat-label>
   </div>
 </div>
