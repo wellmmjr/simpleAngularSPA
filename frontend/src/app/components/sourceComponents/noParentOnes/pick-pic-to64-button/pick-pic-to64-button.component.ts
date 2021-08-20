@@ -7,22 +7,17 @@ import Swall from 'sweetalert2'
   templateUrl: './pick-pic-to64-button.component.html',
   styleUrls: ['./pick-pic-to64-button.component.css']
 })
-export class PickPicTo64ButtonComponent implements OnInit {
+export class PickPicTo64ButtonComponent  {
 
   sellersPermitFile: any;
   //base64s
   sellersPermitString: string;
   //json
+  imageURL = ''
 
-  fileName: string;
+  fileName: string = "Selecione o arquivo";
 
   finalJson = {};
-
-  constructor(){}
-
-  ngOnInit(){
-    this.fileName = "Selecione o arquivo"
-  }
 
 
   addPictures() {
@@ -51,18 +46,29 @@ export class PickPicTo64ButtonComponent implements OnInit {
     var pattern = /image-*/;
     var reader = new FileReader();
     this.fileName = file.name
-    console.log("format: "+file.type+"\n name: "+file.name)
     if (!file.type.match(pattern)) {
       this.prettyAlert('Formato Inválido', 'error', "Selecione um arquivo de imagem válido.");
       return;
     }
-    reader.onloadend = this._handleReaderLoaded.bind(this);
+    reader.onloadend = this.handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
+
+    if(files.target.files.length){
+      console.log("throught")
+      this.imageURL = URL.createObjectURL(file.target.files[0])
+    }
+
+    console.log("format: "+file.type+"\n name: "+file.name+"\n base64: "+reader+"\n file "+file.target)
+
+    // this.imageURL = URL.createObjectURL(reader)
+
   }
-  _handleReaderLoaded(e) {
+
+  handleReaderLoaded(e) {
     let reader = e.target;
     var base64result = reader.result.substr(reader.result.indexOf(',') + 1);
     this.sellersPermitString = base64result;
+
   }
 
   prettyAlert(titleP: string, iconP, textP: string){
