@@ -1,6 +1,7 @@
-<div>
+<div class="div-prev-img" *ngIf="imageURL">
 
-  <img src="{{ imageURL }}" mat-card-sm-image>testing
+  <img src="{{ imageURL }}" mat-card-sm-image>
+  <i (click)=dropSelectedPic() class="material-icons">remove_circle</i>
 
 </div>
 
@@ -9,9 +10,8 @@
     <span 
       class="input-group-text" 
       style="font-size: 1em;"  
-      id="inputGroupFileAddon01" 
-      (click)="addPictures()"
-    >Carregar</span>
+      id="inputGroupFileAddon01"
+    >Arquivo:</span>
   </div>
   <div class="form-group custom-file">
     <input 

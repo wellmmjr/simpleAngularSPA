@@ -1,5 +1,4 @@
-import { MatFormFieldControl } from '@angular/material/form-field';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import Swall from 'sweetalert2'
 
 @Component({
@@ -9,29 +8,19 @@ import Swall from 'sweetalert2'
 })
 export class PickPicTo64ButtonComponent  {
 
-  sellersPermitFile: any;
   //base64s
-  sellersPermitString: string;
-  //json
+  myImgBase64String: string;
+
   imageURL = ''
 
   fileName: string = "Selecione o arquivo";
 
-  finalJson = {};
-
-
-  addPictures() {
-    this.finalJson = {
-      "sellersPermitFile": this.sellersPermitString,
-    }
-  }
   public picked(event) {
     let fileList: FileList = event.target.files;
     // debugger;
     if (fileList.length > 0) {
       const file: File = fileList[0];
 
-      this.sellersPermitFile = file;
       this.handleInputChange(file); //turn into base64
 
     }
@@ -46,6 +35,7 @@ export class PickPicTo64ButtonComponent  {
     var pattern = /image-*/;
     var reader = new FileReader();
     this.fileName = file.name
+
     if (!file.type.match(pattern)) {
       this.prettyAlert('Formato Inválido', 'error', "Selecione um arquivo de imagem válido.");
       return;
@@ -53,21 +43,16 @@ export class PickPicTo64ButtonComponent  {
     reader.onloadend = this.handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
 
-    if(files.target.files.length){
-      console.log("throught")
-      this.imageURL = URL.createObjectURL(file.target.files[0])
+    reader.onload = (event: any) => {
+      this.imageURL = event.target.result
     }
-
-    console.log("format: "+file.type+"\n name: "+file.name+"\n base64: "+reader+"\n file "+file.target)
-
-    // this.imageURL = URL.createObjectURL(reader)
 
   }
 
   handleReaderLoaded(e) {
+
     let reader = e.target;
-    var base64result = reader.result.substr(reader.result.indexOf(',') + 1);
-    this.sellersPermitString = base64result;
+    this.myImgBase64String = reader.result.substr(reader.result.indexOf(',') + 1);
 
   }
 
@@ -79,5 +64,9 @@ export class PickPicTo64ButtonComponent  {
       icon: iconP
     });
   
+  }
+
+  dropSelectedPic(){
+    console.log("deleted")
   }
 }

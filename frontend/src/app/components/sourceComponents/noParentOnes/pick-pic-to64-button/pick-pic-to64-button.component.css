@@ -1,3 +1,21 @@
+.div-prev-img{
+  width: 100%;
+  max-width: 100%;
+  height: 8rem;
+  display: flex;
+  margin: 0.75rem;
+  align-content: center;
+  justify-content: center;
+}
+
+.div-prev-img i{
+  cursor: pointer;
+  max-height: 2rem;
+  color: #BA151B;
+  align-self: flex-start;
+  justify-self: start;
+}
+
 .btn-file {
   position: relative;
   overflow: hidden;
