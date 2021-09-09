@@ -14,6 +14,8 @@
   color: #BA151B;
   align-self: flex-start;
   justify-self: start;
+  left: -1.5rem;
+  position: relative;
 }
 
 .btn-file {
