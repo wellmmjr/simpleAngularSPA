@@ -68,6 +68,6 @@ export class PickPicTo64ButtonComponent  {
 
   dropSelectedPic(){
     this.imageURL = ''
-    console.log("deleted")
+    this.fileName = "Selecione o arquivo"
   }
 }
