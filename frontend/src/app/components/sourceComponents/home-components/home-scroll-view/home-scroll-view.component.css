@@ -1,0 +1,37 @@
+.mat-cardDiv {
+
+  min-width: 100%;
+  border: double 2px transparent;
+  background-image: linear-gradient(white, white), 
+    radial-gradient(circle at top left, red, blue);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 61%;
+  background-color: dimgrey;
+  cursor: pointer;
+  
+}
+
+.wrapper {
+  display: flex;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 0;
+}
+
+.wrapper .item {
+  min-width: 4em;
+  height: 4rem;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  word-wrap: 0;
+  background-color: #ddd;
+  margin-right: 1em;
+  justify-content: center;
+  color: black;
+}

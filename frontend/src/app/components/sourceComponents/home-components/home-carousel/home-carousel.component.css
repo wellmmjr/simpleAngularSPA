@@ -1,0 +1,47 @@
+.fullContentBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-bottom: 6rem;
+}
+
+.fullContentBox .paragraph{
+    display: flex;
+    width: 100%;
+    margin-top: 5.5rem;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+    text-align: justify;
+
+}
+
+.fullContentBox .carouselBox {
+    display: flex;
+    width: 100%;
+    /* max-height: 50%; */
+    margin-top: 6.5rem;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+.fullContentBox .carouselBox ngb-carousel{
+    /* display: flex; */
+    width: 75%;
+    height: auto;
+    max-height: 25rem;
+    align-self: center;
+    justify-self: center;
+}
+
+.fullContentBox .carouselBox img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 25rem;
+}
+
+p::selection{
+    background: purple;
+    color: black;
+}

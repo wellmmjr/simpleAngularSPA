@@ -1,5 +1,6 @@
+import { HomeScrollViewComponent } from './components/sourceComponents/home-components/home-scroll-view/home-scroll-view.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { ServicesSecctionComponent } from './components/providedServices/service
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatButtonModule } from '@angular/material/button'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -23,7 +26,10 @@ import { HomeHighlightsComponent } from './components/home/home-highlights/home-
 import { HomeColumnistComponent } from './components/home/home-columnist/home-columnist.component';
 import { ScheduleComponent } from './view/schedule/schedule.component'
 import { MatCardModule } from '@angular/material/card';
-import { HomeScrollViewComponent } from './components/sourceComponents/home-scroll-view/home-scroll-view.component'
+import { HomeCarouselComponent } from './components/sourceComponents/home-components/home-carousel/home-carousel.component';
+import { PickPicTo64ButtonComponent } from './components/sourceComponents/noParentOnes/pick-pic-to64-button/pick-pic-to64-button.component';
+import { PicFormTo64Component } from './components/sourceComponents/noParentOnes/pic-form-to64/pic-form-to64.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,21 +46,32 @@ import { HomeScrollViewComponent } from './components/sourceComponents/home-scro
     HomeHighlightsComponent,
     HomeColumnistComponent,
     ScheduleComponent,
-    HomeScrollViewComponent
+    HomeScrollViewComponent,
+    HomeCarouselComponent,
+    PickPicTo64ButtonComponent,
+    PicFormTo64Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

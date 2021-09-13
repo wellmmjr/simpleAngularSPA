@@ -1,9 +1,5 @@
-<div class="d-flex justify-content-center align-items-center">
-
-  <div class="wrapper">
-    <div class="mat-cardDiv item" *ngFor="let item of scrollItems">
-      {{ item }}
-    </div>
+<div class="justify-content-center align-items-center">
+  <div>
+    <app-home-scroll-view [highLightItems]="scrollItems"></app-home-scroll-view>
   </div>
-
 </div>
