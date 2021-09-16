@@ -12,7 +12,7 @@
         >
     </mat-form-field>
 
-    <mat-form-field >
+    <mat-form-field shouldLabelFloat>
       <mat-label>Conteúdo</mat-label>
       <textarea 
         matInput 
@@ -25,7 +25,9 @@
         placeholder="Seu texto ou conteúdo, a vontade aqui"></textarea>
     </mat-form-field>
 
-    <app-pick-pic-to64-button></app-pick-pic-to64-button>
+    <app-pick-pic-to64-button (imageURL)="imageUrlEvent($event)"></app-pick-pic-to64-button>
+
+    <mat-button-toggle *ngIf="imageUrl && contentMidia">Enviar Conteúdo</mat-button-toggle>
 
   </form>
 

@@ -6,8 +6,8 @@ form {
     margin: 0.25rem;
 }
 
-mat-card {
-    width: 50%;
+form textarea {
+    overflow: hidden;
 }
 
 button {

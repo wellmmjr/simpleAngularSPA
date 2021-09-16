@@ -2,19 +2,17 @@
 
   min-width: 100%;
   border: double 2px transparent;
-  background-image: linear-gradient(white, white), 
+  background-image: linear-gradient(white, #2E2C2C), 
     radial-gradient(circle at top left, red, blue);
   background-origin: border-box;
   background-clip: content-box, border-box;
   border-radius: 61%;
-  background-color: dimgrey;
   cursor: pointer;
   
 }
 
 .wrapper {
   display: flex;
-
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -24,14 +22,21 @@
 }
 
 .wrapper .item {
+  display: flex;
   min-width: 4em;
   height: 4rem;
   text-align: center;
   user-select: none;
   -webkit-user-select: none;
   word-wrap: 0;
-  background-color: #ddd;
   margin-right: 1em;
   justify-content: center;
-  color: black;
+  color: rgb(186, 21, 27);
+}
+
+.wrapper .item i {
+  display: table-cell;
+  justify-content: center;
+  vertical-align: middle;
+  align-self: center;
 }

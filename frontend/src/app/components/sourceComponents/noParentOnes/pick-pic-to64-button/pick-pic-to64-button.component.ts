@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { PicFormTo64Component } from './../pic-form-to64/pic-form-to64.component';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import Swall from 'sweetalert2'
+
 
 @Component({
   selector: 'app-pick-pic-to64-button',
@@ -11,11 +13,12 @@ export class PickPicTo64ButtonComponent  {
   //base64s
   myImgBase64String: string;
 
-  imageURL = ''
+  @Output() imageURL = new EventEmitter<''>()
 
   fileName: string = "Selecione o arquivo";
 
-  public picked(event) {
+  picked(event) {
+    console.log("event recebido "+event.target.files)
     let fileList: FileList = event.target.files;
     // debugger;
     if (fileList.length > 0) {
@@ -44,10 +47,15 @@ export class PickPicTo64ButtonComponent  {
     reader.readAsDataURL(file);
 
     reader.onload = (event: any) => {
-      this.imageURL = event.target.result
+      this.imageURL.emit(event.target.result)
     }
 
   }
+
+  // imageUrlEvent(value){
+  //   console.log("heres the value "+value)
+  //   this.imageUrl = value
+  // }
 
   handleReaderLoaded(e) {
 
@@ -67,7 +75,7 @@ export class PickPicTo64ButtonComponent  {
   }
 
   dropSelectedPic(){
-    this.imageURL = ''
+    this.imageURL.emit('')
     this.fileName = "Selecione o arquivo"
   }
 }

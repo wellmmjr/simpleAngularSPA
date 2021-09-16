@@ -1,6 +1,6 @@
 <div class="div-prev-img" *ngIf="imageURL">
 
-  <img src="{{ imageURL }}" mat-card-sm-image>
+  <img src="{{imageURL}} = ($event)"  mat-card-sm-image>
 
   <i (click)=dropSelectedPic() class="material-icons">remove_circle</i>
 
