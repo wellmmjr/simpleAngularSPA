@@ -13,14 +13,16 @@ export class PickPicTo64ButtonComponent  {
   //base64s
   myImgBase64String: string;
 
-  @Output() imageURL = new EventEmitter<''>()
+  @Output() base64imageURL = new EventEmitter<string>()
+  
+  imageURL = ''
 
   fileName: string = "Selecione o arquivo";
 
   picked(event) {
-    console.log("event recebido "+event.target.files)
+    
     let fileList: FileList = event.target.files;
-    // debugger;
+    
     if (fileList.length > 0) {
       const file: File = fileList[0];
 
@@ -47,15 +49,13 @@ export class PickPicTo64ButtonComponent  {
     reader.readAsDataURL(file);
 
     reader.onload = (event: any) => {
-      this.imageURL.emit(event.target.result)
+      
+      this.imageURL = event.target.result
+      this.base64imageURL.emit(this.imageURL)
     }
 
   }
 
-  // imageUrlEvent(value){
-  //   console.log("heres the value "+value)
-  //   this.imageUrl = value
-  // }
 
   handleReaderLoaded(e) {
 
@@ -75,7 +75,8 @@ export class PickPicTo64ButtonComponent  {
   }
 
   dropSelectedPic(){
-    this.imageURL.emit('')
+    this.imageURL = ''
+    this.base64imageURL.emit('')
     this.fileName = "Selecione o arquivo"
   }
 }

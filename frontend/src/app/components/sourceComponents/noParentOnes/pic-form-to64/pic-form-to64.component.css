@@ -1,13 +1,34 @@
-
 form {
     background-color: #2E2C2C;
     display: flex;
     flex-direction: column;
-    margin: 0.25rem;
+}
+
+form mat-form-field {
+    margin: 2rem;
 }
 
 form textarea {
     overflow: hidden;
+}
+
+form app-pick-pic-to64-button{
+    margin: 2rem
+}
+
+form div{
+    flex-direction: row;
+}
+
+.cancelar{
+    background-color: #2E2C2C;
+    color: white;
+    box-shadow: #BA151B;
+}
+
+.enviar {
+    margin: 1rem;
+    background-color: #BA151B;
 }
 
 button {

@@ -1,13 +1,14 @@
-<ng-template #content let-modal>
+<!-- <ng-template #content let-modal> -->
 
 
-  <form>
+  <form class="div">
     <mat-form-field >
       <mat-label>Título</mat-label>
       <input 
         matInput 
+        #inputFormTitle
         name="title" 
-        [(ngModel)]="contentMidia.title" 
+        [(ngModel)]="inputTitle" 
         placeholder="O título do seu conteúdo aqui..."
         >
     </mat-form-field>
@@ -16,8 +17,9 @@
       <mat-label>Conteúdo</mat-label>
       <textarea 
         matInput 
+        #inputFormContent 
         name="text" 
-        [(ngModel)]="contentMidia.text"
+        [(ngModel)]="inputText"
         cdkTextareaAutosize
         #autosize="cdkTextareaAutosize"
         cdkAutosizeMinRows="1"
@@ -25,15 +27,17 @@
         placeholder="Seu texto ou conteúdo, a vontade aqui"></textarea>
     </mat-form-field>
 
-    <app-pick-pic-to64-button (imageURL)="imageUrlEvent($event)"></app-pick-pic-to64-button>
+    <app-pick-pic-to64-button (base64imageURL)="imageUrlEvent($event)"></app-pick-pic-to64-button>
 
-    <mat-button-toggle *ngIf="imageUrl && contentMidia">Enviar Conteúdo</mat-button-toggle>
+    <div>
+      <mat-button-toggle class="cancelar" >Cancelar</mat-button-toggle>
+
+      <mat-button-toggle class="enviar" *ngIf="imageUrl && inputFormTitle != '' && inputFormContent != '' ">Enviar Conteúdo</mat-button-toggle>
+    </div>
 
   </form>
 
 
-</ng-template>
+<!-- </ng-template> -->
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">trying</button>
-
-<pre>{{ closeResult }}</pre>
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">trying</button> -->

@@ -14,6 +14,11 @@ import {take} from 'rxjs/operators'
 })
 
 export class PicFormTo64Component {
+
+  inputTitle: String = new String()
+
+  inputText: String = new String()
+
   contentMidia =  {
     title: '',
     text: ''
@@ -40,7 +45,7 @@ export class PicFormTo64Component {
   }
 
   private getDismissReason(reason: any): string {
-    console.log(this.imageUrl+" ela")
+    
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
