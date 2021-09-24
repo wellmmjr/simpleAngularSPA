@@ -29,7 +29,8 @@ import { MatCardModule } from '@angular/material/card';
 import { HomeCarouselComponent } from './components/sourceComponents/home-components/home-carousel/home-carousel.component';
 import { PickPicTo64ButtonComponent } from './components/sourceComponents/noParentOnes/pick-pic-to64-button/pick-pic-to64-button.component';
 import { PicFormTo64Component } from './components/sourceComponents/noParentOnes/pic-form-to64/pic-form-to64.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule  } from '@angular/material/progress-spinner'
 
 @NgModule({
   declarations: [
@@ -63,6 +64,8 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule,
     HttpClientModule,
     NgbModule
   ],

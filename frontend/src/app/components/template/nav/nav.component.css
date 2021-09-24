@@ -10,6 +10,16 @@
     align-items: center;
 }
 
+.nav .loading{
+    width: 100%;
+    height: 100%;
+    display: contents;
+}
+
+.loading ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #2E2C2C;
+}
+
 .nav .mat-button-toggle-group{
     border: none;  
 }

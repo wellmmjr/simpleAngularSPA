@@ -4,6 +4,12 @@ form {
     flex-direction: column;
 }
 
+form span {
+    margin: 2rem;
+    font-size: large;
+    font-weight: 500;
+}
+
 form mat-form-field {
     margin: 2rem;
 }
@@ -18,19 +24,17 @@ form app-pick-pic-to64-button{
 
 form div{
     flex-direction: row;
+    align-self: center;
+    margin-bottom: 1rem;
 }
 
 .cancelar{
     background-color: #2E2C2C;
-    color: white;
-    box-shadow: #BA151B;
+    border-color: #BA151B;
+    border-style: inset
 }
 
 .enviar {
-    margin: 1rem;
     background-color: #BA151B;
-}
-
-button {
-    margin: 5px;
+    margin: 1rem;
 }

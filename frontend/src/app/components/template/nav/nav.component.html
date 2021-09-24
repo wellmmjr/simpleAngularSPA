@@ -1,5 +1,8 @@
 <mat-toolbar-row class="mat-toolbar nav ">
-  <mat-button-toggle-group class="scrolling" name="menuItens">
+  <div class="loading" *ngIf="!menuLoaded">
+    <mat-spinner strokeWidth="4" [diameter]="40" ></mat-spinner>
+  </div>
+  <mat-button-toggle-group *ngIf="menuLoaded" class="scrolling" name="menuItens">
     <div *ngFor="let item of menuItens">
       <span>
         <mat-button-toggle value="{{ item.name }}">

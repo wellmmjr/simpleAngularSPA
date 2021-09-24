@@ -11,11 +11,19 @@ export class NavComponent implements OnInit {
 
   menuItens: MenuItem[]
 
+  menuLoaded = false
+
   constructor(private navService: NavService) { }
 
   ngOnInit(): void {
     this.navService.listWorkspace().subscribe(menuItens => {
       this.menuItens = menuItens
+      if(this.menuItens.length > 0){
+        
+        this.menuLoaded = true
+
+      }
+      console.log("meu subscribe ao menuload "+this.menuLoaded)
     })
   }
 
