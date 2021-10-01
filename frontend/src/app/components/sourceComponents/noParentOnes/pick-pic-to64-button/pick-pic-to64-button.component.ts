@@ -1,3 +1,5 @@
+import { CarouselContent } from './../../home-components/home-carousel/carouselContent.model';
+import { Highlight } from './../../home-components/home-scroll-view/highlight.model';
 import { PicFormTo64Component } from './../pic-form-to64/pic-form-to64.component';
 import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import Swall from 'sweetalert2'
@@ -13,20 +15,33 @@ export class PickPicTo64ButtonComponent  {
   //base64s
   myImgBase64String: string;
 
-  @Output() base64imageURL = new EventEmitter<string>()
-  
-  imageURL = ''
+  modelHighList: Highlight
 
-  fileName: string = "Selecione o arquivo";
+  modelCarousel: CarouselContent
+
+  @Output() base64imageURL = new EventEmitter<Map<string, string>>()
+
+  contentMap: Map<string, string> = new Map<string, string>()
+  
+  // imageURL = []
+
+  fileName = ["Selecione o arquivo"];
+
+  isMultiple = true
 
   picked(event) {
     
     let fileList: FileList = event.target.files;
     
     if (fileList.length > 0) {
-      const file: File = fileList[0];
 
-      this.handleInputChange(file); //turn into base64
+      for(let targetFiles = 0; targetFiles < fileList.length; targetFiles++ ){
+        
+        const file: File = fileList[targetFiles];
+
+        this.handleInputChange(file); //turn into base64
+        
+      }
 
     }
     else {
@@ -39,8 +54,7 @@ export class PickPicTo64ButtonComponent  {
     var file = files;
     var pattern = /image-*/;
     var reader = new FileReader();
-    this.fileName = file.name
-
+    
     if (!file.type.match(pattern)) {
       this.prettyAlert('Formato Inválido', 'error', "Selecione um arquivo de imagem válido.");
       return;
@@ -49,13 +63,15 @@ export class PickPicTo64ButtonComponent  {
     reader.readAsDataURL(file);
 
     reader.onload = (event: any) => {
-      
-      this.imageURL = event.target.result
-      this.base64imageURL.emit(this.imageURL)
+      if(!this.contentMap.has(event.target.result)){
+        this.contentMap.set(event.target.result, file.name)
+        this.base64imageURL.emit(this.contentMap)
+      }else{
+        this.prettyAlert("Atenção", 'warning', "Imagem já foi adicionada anteriormente.")
+      }
     }
-
+    
   }
-
 
   handleReaderLoaded(e) {
 
@@ -74,9 +90,15 @@ export class PickPicTo64ButtonComponent  {
   
   }
 
-  dropSelectedPic(){
-    this.imageURL = ''
-    this.base64imageURL.emit('')
-    this.fileName = "Selecione o arquivo"
+  dropSelectedPic(imageurl){
+
+    if(this.contentMap.has(imageurl)){
+      this.contentMap.delete(imageurl)
+      this.base64imageURL.emit(this.contentMap)
+    }else{
+      this.prettyAlert("Não encontrada", 'error', "Imagem selecionada não encontrada para exclusão")
+    }
+
   }
+
 }

@@ -31,7 +31,7 @@
     <app-pick-pic-to64-button (base64imageURL)="imageUrlEvent($event)"></app-pick-pic-to64-button>
 
     <div>
-      <mat-button-toggle class="cancelar" >Cancelar</mat-button-toggle>
+      <mat-button-toggle class="cancelar" (click)="getDismiss()" >Cancelar</mat-button-toggle>
 
       <mat-button-toggle class="enviar" *ngIf="imageUrl && inputFormTitle != '' && inputFormContent != '' ">Enviar Conteúdo</mat-button-toggle>
     </div>

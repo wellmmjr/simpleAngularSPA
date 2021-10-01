@@ -1,8 +1,27 @@
-<div class="div-prev-img" *ngIf="imageURL">
+<div class="div-prev-img-divs" *ngIf="contentMap.size > 0">
 
-  <img src={{imageURL}}  mat-card-sm-image>
+  <div *ngFor="let imageContent of contentMap | keyvalue" class="prev-img">
+    <div class="cardImgLabel">
+      
+      <img src={{imageContent.key}} mat-card-sm-image>
+      <p>{{imageContent.value}}</p>
+    </div>
 
-  <i (click)=dropSelectedPic() class="material-icons">remove_circle</i>
+    <i (click)=dropSelectedPic(imageContent.key) class="material-icons">remove_circle</i>
+
+    <!-- <div class="title-mat-label"> -->
+
+      <!-- <mat-label> -->
+
+        
+      <!-- </mat-label>
+    </div> -->
+
+  </div>
+
+  <div class="add-img" (click)="inputFileContent.click()">
+    <i class="material-icons">add</i>
+  </div>
 
 </div>
 
@@ -11,8 +30,8 @@
     <span class="input-group-text" style="font-size: 1em;" id="inputGroupFileAddon01">Arquivo:</span>
   </div>
   <div class="form-group custom-file">
-    <input class="custom-file-input" aria-describedby="inputGroupFileAddon01" (change)="picked($event)" id="pickPic"
-      name="pickPic" type="file">
+    <input #inputFileContent [multiple]="isMultiple" class="custom-file-input" aria-describedby="inputGroupFileAddon01"
+      (change)="picked($event)" id="pickPic" name="pickPic" type="file">
     <mat-label class="custom-file-label" id="pickPic" for="inputGroupFileAddon01">{{fileName}}</mat-label>
   </div>
 </div>
