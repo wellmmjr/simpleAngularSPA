@@ -22,8 +22,6 @@ export class PickPicTo64ButtonComponent  {
   @Output() base64imageURL = new EventEmitter<Map<string, string>>()
 
   contentMap: Map<string, string> = new Map<string, string>()
-  
-  // imageURL = []
 
   fileName = ["Selecione o arquivo"];
 

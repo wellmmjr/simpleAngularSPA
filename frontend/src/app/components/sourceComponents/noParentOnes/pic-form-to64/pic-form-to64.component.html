@@ -1,11 +1,12 @@
 <!-- <ng-template #content let-modal> -->
 
 
-  <form class="div">
+  <form #content class="div">
     <span>Publicar Midia</span>
     <mat-form-field >
       <mat-label>Título</mat-label>
       <input 
+        required
         matInput 
         #inputFormTitle
         name="title" 
@@ -14,9 +15,10 @@
         >
     </mat-form-field>
 
-    <mat-form-field shouldLabelFloat>
+    <mat-form-field *ngIf="typeFormComponentFor === stateEnumValidator.columnist" shouldLabelFloat>
       <mat-label>Conteúdo</mat-label>
       <textarea 
+        required
         matInput 
         #inputFormContent 
         name="text" 
@@ -33,7 +35,7 @@
     <div>
       <mat-button-toggle class="cancelar" (click)="getDismiss()" >Cancelar</mat-button-toggle>
 
-      <mat-button-toggle class="enviar" *ngIf="imageUrl && inputFormTitle != '' && inputFormContent != '' ">Enviar Conteúdo</mat-button-toggle>
+      <mat-button-toggle class="enviar" *ngIf="imageUrl.size && isFormComplete ">Enviar Conteúdo</mat-button-toggle>
     </div>
 
   </form>

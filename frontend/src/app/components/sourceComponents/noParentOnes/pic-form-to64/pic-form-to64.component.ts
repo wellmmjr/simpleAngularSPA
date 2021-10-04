@@ -1,16 +1,13 @@
-import { PickPicTo64ButtonComponent } from './../pick-pic-to64-button/pick-pic-to64-button.component';
-import { MatFormFieldControl } from '@angular/material/form-field';
-import { Component, NgZone, ViewChild, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { StateForm64 } from './enum-pic-form.model';
+
+import { Component, Input, ViewChild } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
-import {take} from 'rxjs/operators'
 
 @Component({
   selector: 'app-pic-form-to64',
   templateUrl: './pic-form-to64.component.html',
   styleUrls: ['./pic-form-to64.component.css']
-  // directives: [PickPicTo64ButtonComponent]
 })
 
 export class PicFormTo64Component {
@@ -19,31 +16,50 @@ export class PicFormTo64Component {
 
   inputText: String = new String()
 
+  componentContentFor = 0
+
+  @Input() isFormComplete = false
+
   contentMidia =  {
     title: '',
     text: ''
   }
+  
+  @Input()
+  typeFormComponentFor = StateForm64.init
 
-  imageUrl = ''
+  stateEnumValidator = StateForm64
 
-  closeResult = ''
+  imageUrl: Map<string, string> = new Map<string, string>()
 
   constructor(private modalService: NgbModal) { }
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize
+
+  ngOnInit(){
+    console.log(this.typeFormComponentFor+" meu componente passando")
+  }
 
   imageUrlEvent(value){
     this.imageUrl = value
   }
 
   open(content){
-    this.modalService.open(content, {size: 'lg', centered: true, scrollable: true, ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    });
+    
+    this.modalService.open(content, {size: 'lg', centered: true, scrollable: true, ariaLabelledBy: 'modal-basic-title'})
   }
 
   getDismiss() {
+    console.log("meu tipo \n"+this.typeFormComponentFor)
     this.modalService.dismissAll()
+
+    
+  }
+
+
+
+  registerContent(mapContent: Map<string, string>){
+
   }
 
 }

@@ -1,10 +1,7 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PicFormTo64Component } from './../../noParentOnes/pic-form-to64/pic-form-to64.component';
-import { Highlight } from './highlight.model';
-import { Observable } from 'rxjs';
-import { DataSource } from '@angular/cdk/collections';
 import { Component, Input, OnInit } from '@angular/core';
-
+import { StateForm64 } from '../../noParentOnes/pic-form-to64/enum-pic-form.model'
 @Component({
   selector: 'app-home-scroll-view',
   templateUrl: './home-scroll-view.component.html',
@@ -12,9 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HomeScrollViewComponent implements OnInit {
 
-  teste: PicFormTo64Component
   @Input()
   highLightItems: string[]
+
+  stateEnum = StateForm64
+
 
   constructor(private modalService: NgbModal) { }
 
@@ -24,6 +23,7 @@ export class HomeScrollViewComponent implements OnInit {
 
   openModal(){
     const modalRef = this.modalService.open(PicFormTo64Component)
+    modalRef.componentInstance.typeFormComponentFor = this.stateEnum.highlight
   }
 
 }
