@@ -30,7 +30,8 @@ import { HomeCarouselComponent } from './components/sourceComponents/home-compon
 import { PickPicTo64ButtonComponent } from './components/sourceComponents/noParentOnes/pick-pic-to64-button/pick-pic-to64-button.component';
 import { PicFormTo64Component } from './components/sourceComponents/noParentOnes/pic-form-to64/pic-form-to64.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatProgressSpinnerModule  } from '@angular/material/progress-spinner'
+import { MatProgressSpinnerModule  } from '@angular/material/progress-spinner';
+import { PrettyAlertComponent } from './components/sourceComponents/noParentOnes/pretty-alert/pretty-alert.component'
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { MatProgressSpinnerModule  } from '@angular/material/progress-spinner'
     HomeScrollViewComponent,
     HomeCarouselComponent,
     PickPicTo64ButtonComponent,
-    PicFormTo64Component
+    PicFormTo64Component,
+    PrettyAlertComponent
   ],
   imports: [
     BrowserModule,

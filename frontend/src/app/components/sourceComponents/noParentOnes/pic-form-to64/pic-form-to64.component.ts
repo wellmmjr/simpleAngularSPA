@@ -1,3 +1,7 @@
+import { PrettyAlertComponent } from './../pretty-alert/pretty-alert.component';
+import { Highlight } from './../../home-components/home-scroll-view/highlight.model';
+import { HomeColumnistService } from './../../../home/home-services/home-services-columnist.service';
+import { HomeHighlightService } from '../../../home/home-services/home-services-highlight.service';
 import { StateForm64 } from './enum-pic-form.model';
 
 import { Component, Input, ViewChild } from '@angular/core';
@@ -19,11 +23,6 @@ export class PicFormTo64Component {
   componentContentFor = 0
 
   @Input() isFormComplete = false
-
-  contentMidia =  {
-    title: '',
-    text: ''
-  }
   
   @Input()
   typeFormComponentFor = StateForm64.init
@@ -32,13 +31,9 @@ export class PicFormTo64Component {
 
   imageUrl: Map<string, string> = new Map<string, string>()
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private prettyAlert: PrettyAlertComponent, private highlightService: HomeHighlightService, private columnistService: HomeColumnistService) { }
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize
-
-  ngOnInit(){
-    console.log(this.typeFormComponentFor+" meu componente passando")
-  }
 
   imageUrlEvent(value){
     this.imageUrl = value
@@ -50,16 +45,46 @@ export class PicFormTo64Component {
   }
 
   getDismiss() {
-    console.log("meu tipo \n"+this.typeFormComponentFor)
+
     this.modalService.dismissAll()
 
-    
   }
 
+  emptyField(){
+    if(this.typeFormComponentFor === this.stateEnumValidator.columnist){
+      if(this.inputText != '' && this.inputTitle != ''){
+        this.isFormComplete = true
+      }else{
+        this.isFormComplete = false
+      }
+    }else if(this.typeFormComponentFor === this.stateEnumValidator.highlight){
+      
+      if(this.inputTitle != ''){
+        this.isFormComplete = true
+      }else{
+        this.isFormComplete = false
+      }
+    }else{
+      this.isFormComplete = false
+    }
+  }
 
+  registerContent(){
 
-  registerContent(mapContent: Map<string, string>){
+    if(this.typeFormComponentFor === this.stateEnumValidator.highlight){
 
+      let highlight: Highlight
+      highlight.title = this.inputTitle
+  
+      for(let index = 0; index < this.imageUrl.size; index++){
+  
+        highlight.midia.set(index, this.imageUrl[index].key)
+      }
+
+      this.highlightService.createHighLight(highlight).subscribe(() => {
+        this.prettyAlert.showMessage("Destaque enviado!", 'success', "Dados foram enviado para o destaque!")
+      })
+    }
   }
 
 }

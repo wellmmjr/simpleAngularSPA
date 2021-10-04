@@ -23,7 +23,6 @@ export class NavComponent implements OnInit {
         this.menuLoaded = true
 
       }
-      console.log("meu subscribe ao menuload "+this.menuLoaded)
     })
   }
 

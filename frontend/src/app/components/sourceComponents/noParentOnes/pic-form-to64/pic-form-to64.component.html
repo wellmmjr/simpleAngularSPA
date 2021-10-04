@@ -11,6 +11,7 @@
         #inputFormTitle
         name="title" 
         [(ngModel)]="inputTitle" 
+        (ngModelChange)="emptyField()"
         placeholder="O título do seu conteúdo aqui..."
         >
     </mat-form-field>
@@ -27,6 +28,7 @@
         #autosize="cdkTextareaAutosize"
         cdkAutosizeMinRows="1"
         cdkAutosizeMaxRows="10"
+        (ngModelChange)="emptyField()"
         placeholder="Seu texto ou conteúdo, a vontade aqui"></textarea>
     </mat-form-field>
 
@@ -35,7 +37,7 @@
     <div>
       <mat-button-toggle class="cancelar" (click)="getDismiss()" >Cancelar</mat-button-toggle>
 
-      <mat-button-toggle class="enviar" *ngIf="imageUrl.size && isFormComplete ">Enviar Conteúdo</mat-button-toggle>
+      <mat-button-toggle class="enviar" *ngIf="imageUrl.size && isFormComplete">Enviar Conteúdo</mat-button-toggle>
     </div>
 
   </form>

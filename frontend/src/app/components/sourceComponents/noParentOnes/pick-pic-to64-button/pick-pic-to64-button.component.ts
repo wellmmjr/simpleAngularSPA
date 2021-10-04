@@ -1,8 +1,9 @@
+import { PrettyAlertComponent } from './../pretty-alert/pretty-alert.component';
 import { CarouselContent } from './../../home-components/home-carousel/carouselContent.model';
 import { Highlight } from './../../home-components/home-scroll-view/highlight.model';
 import { PicFormTo64Component } from './../pic-form-to64/pic-form-to64.component';
 import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import Swall from 'sweetalert2'
+
 
 
 @Component({
@@ -27,6 +28,8 @@ export class PickPicTo64ButtonComponent  {
 
   isMultiple = true
 
+  constructor(private prettyAlert: PrettyAlertComponent){ }
+
   picked(event) {
     
     let fileList: FileList = event.target.files;
@@ -43,7 +46,7 @@ export class PickPicTo64ButtonComponent  {
 
     }
     else {
-      this.prettyAlert('Envio da Imagem', 'error', "Nenhuma imagem selecionada.")
+      this.prettyAlert.showMessage('Envio da Imagem', 'error', "Nenhuma imagem selecionada.")
     }
   }
 
@@ -54,7 +57,7 @@ export class PickPicTo64ButtonComponent  {
     var reader = new FileReader();
     
     if (!file.type.match(pattern)) {
-      this.prettyAlert('Formato Inválido', 'error', "Selecione um arquivo de imagem válido.");
+      this.prettyAlert.showMessage('Formato Inválido', 'error', "Selecione um arquivo de imagem válido.");
       return;
     }
     reader.onloadend = this.handleReaderLoaded.bind(this);
@@ -65,7 +68,7 @@ export class PickPicTo64ButtonComponent  {
         this.contentMap.set(event.target.result, file.name)
         this.base64imageURL.emit(this.contentMap)
       }else{
-        this.prettyAlert("Atenção", 'warning', "Imagem já foi adicionada anteriormente.")
+        this.prettyAlert.showMessage("Atenção", 'warning', "Imagem já foi adicionada anteriormente.")
       }
     }
     
@@ -78,23 +81,13 @@ export class PickPicTo64ButtonComponent  {
 
   }
 
-  prettyAlert(titleP: string, iconP, textP: string){
-
-    Swall.fire({
-      title: titleP,
-      text: textP,
-      icon: iconP
-    });
-  
-  }
-
   dropSelectedPic(imageurl){
 
     if(this.contentMap.has(imageurl)){
       this.contentMap.delete(imageurl)
       this.base64imageURL.emit(this.contentMap)
     }else{
-      this.prettyAlert("Não encontrada", 'error', "Imagem selecionada não encontrada para exclusão")
+      this.prettyAlert.showMessage("Não encontrada", 'error', "Imagem selecionada não encontrada para exclusão")
     }
 
   }
