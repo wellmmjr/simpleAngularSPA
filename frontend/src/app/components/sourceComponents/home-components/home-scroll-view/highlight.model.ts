@@ -1,9 +1,9 @@
 export interface Highlight {
     
-    id: number,
+    id?: number,
     // orderPosition: number,
     title: String,
     midia: Map<number, string>
-    icon: string
+    icon?: string
     
 }

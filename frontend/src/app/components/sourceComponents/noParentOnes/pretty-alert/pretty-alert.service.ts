@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Injectable } from '@angular/core';
 import Swall from 'sweetalert2'
 
-@Component({
-  selector: 'app-pretty-alert',
-  templateUrl: './pretty-alert.component.html',
-  styleUrls: ['./pretty-alert.component.css']
+@Injectable({
+  providedIn: 'root'
 })
 export class PrettyAlertComponent {
 
   constructor() { }
-
 
   showMessage(titleP: string, iconP, textP: string){
 

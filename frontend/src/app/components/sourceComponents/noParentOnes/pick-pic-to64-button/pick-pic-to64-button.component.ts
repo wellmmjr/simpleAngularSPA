@@ -1,4 +1,4 @@
-import { PrettyAlertComponent } from './../pretty-alert/pretty-alert.component';
+import { PrettyAlertComponent } from '../pretty-alert/pretty-alert.service';
 import { CarouselContent } from './../../home-components/home-carousel/carouselContent.model';
 import { Highlight } from './../../home-components/home-scroll-view/highlight.model';
 import { PicFormTo64Component } from './../pic-form-to64/pic-form-to64.component';
